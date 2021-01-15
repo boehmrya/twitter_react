@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
-class List extends React.Component {
+class TweetList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,14 +17,14 @@ class List extends React.Component {
 
     return (
       <div className="list">
-        <NameForm />
+        <TweetForm />
       </div>
     );
   }
 
 }
 
-class NameForm extends React.Component {
+class TweetForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -44,13 +44,15 @@ class NameForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div className="wrap">
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        <div className="text-output">{this.state.value}</div>
+      </div>
     );
   }
 }
@@ -58,6 +60,6 @@ class NameForm extends React.Component {
 
 
 ReactDOM.render(
-  <List />,
+  <TweetList />,
   document.getElementById('root')
 );
