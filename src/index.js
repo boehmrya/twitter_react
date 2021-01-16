@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
+function Tweet(props) {
+  return (
+    <div className="tweet">
+    </div>
+  );
+}
+
+
 class TweetList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stepNumber: 0,
-      xIsNext: true,
-      orderAsc: true,
+      tweetCount: 0,
     };
   }
 
