@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function Tweet(props) {
@@ -20,15 +21,14 @@ class TweetList extends React.Component {
   }
 
   render() {
-
     return (
       <div className="list">
         <TweetForm />
       </div>
     );
   }
-
 }
+
 
 class TweetForm extends React.Component {
   constructor(props) {
