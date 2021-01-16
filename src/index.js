@@ -46,9 +46,8 @@ class TweetForm extends React.Component {
     return (
       <div className="wrap">
         <form onSubmit={this.handleSubmit}>
-          <label>
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
+          <label for="tweetBox">Enter your tweet:</label>
+          <textarea id="tweetBox" name="" value={this.state.value} onChange={this.handleChange} rows="4" cols="50"></textarea>
           <input type="submit" value="Submit" />
         </form>
         <div className="text-output">{this.state.value}</div>
