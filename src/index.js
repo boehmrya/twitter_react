@@ -16,7 +16,7 @@ class TweetList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tweetCount: 0,
+      tweets: [],
     };
   }
 
