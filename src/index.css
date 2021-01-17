@@ -5,11 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #eee;
+  background-color: #eee !important;
 }
 
 body,html {
   height: 100%;
+}
+
+.list {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#root {
+  margin-top: 40px;
 }
 
 code {
@@ -20,4 +29,16 @@ code {
 label,
 textarea {
   display: block;
+}
+
+form label {
+  margin-bottom: 15px;
+}
+
+form button {
+  margin-top: 15px;
+}
+
+.wrap {
+  margin-top: 40px;
 }

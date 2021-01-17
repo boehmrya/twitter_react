@@ -23,6 +23,7 @@ class TweetList extends React.Component {
   render() {
     return (
       <div className="list">
+        <h1 className="header">Welcome to MicroBlogger</h1>
         <TweetForm />
         { this.state.tweets }
       </div>
