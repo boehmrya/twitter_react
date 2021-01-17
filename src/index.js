@@ -24,6 +24,7 @@ class TweetList extends React.Component {
     return (
       <div className="list">
         <TweetForm />
+        { this.state.tweets }
       </div>
     );
   }
@@ -53,8 +54,8 @@ class TweetForm extends React.Component {
       <div className="wrap">
         <form onSubmit={this.handleSubmit}>
           <label for="tweetBox">Enter your tweet:</label>
-          <textarea id="tweetBox" name="" value={this.state.value} onChange={this.handleChange} rows="4" cols="50"></textarea>
-          <input type="submit" value="Submit" />
+          <textarea id="tweetBox" className="form-control" name="" value={this.state.value} onChange={this.handleChange} rows="4" cols="50"></textarea>
+          <button type="submit" className="btn btn-primary mb-2">Submit Tweet</button>
         </form>
         <div className="text-output">{this.state.value}</div>
       </div>
