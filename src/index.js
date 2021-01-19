@@ -53,7 +53,7 @@ class TweetForm extends React.Component {
   render() {
     return (
       <div className="wrap">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.handleSubmit}>
           <label for="tweetBox">Enter your tweet:</label>
           <textarea id="tweetBox" className="form-control" name="" value={this.props.value} onChange={this.props.handleChange} rows="4" cols="50"></textarea>
           <button type="submit" className="btn btn-primary mb-2">Submit Tweet</button>
