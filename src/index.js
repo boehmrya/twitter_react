@@ -29,7 +29,19 @@ class TweetList extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+    let d = new Date();
+    let month = monthNames[d.getMonth()];
+    let day = d.getDate();
+    let year = d.getFullYear();
+    let date = month + ' ' + day + ', ' + year;
+    let tweet = {
+        value: this.state.value,
+        date: date,
+    };
+    this.setState({tweets: this.state.tweets.push(tweet)});
+
     event.preventDefault();
   }
 
