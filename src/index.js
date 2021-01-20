@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Tweet(props) {
   return (
     <div className="tweet">
+      <div className="text">{props.text}</div>
+      <div className="date">{props.date}</div>
     </div>
   );
 }
@@ -24,6 +26,15 @@ class TweetList extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  renderTweet(text, date) {
+    return (
+      <Tweet
+        text={text}
+        date={date}
+      />
+    );
+  }
+
   handleChange(event) {
     this.setState({value: event.target.value});
   }
@@ -31,16 +42,9 @@ class TweetList extends React.Component {
   handleSubmit(event) {
     const monthNames = ["January", "February", "March", "April", "May", "June",
                         "July", "August", "September", "October", "November", "December"];
-    let d = new Date();
-    let month = monthNames[d.getMonth()];
-    let day = d.getDate();
-    let year = d.getFullYear();
-    let date = month + ' ' + day + ', ' + year;
-    let tweet = {
-        value: this.state.value,
-        date: date,
-    };
-    this.setState({tweets: this.state.tweets.push(tweet)});
+    const d = new Date();
+    const date = monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+    this.setState({tweets: this.state.tweets.push(this.renderTweet(this.state.value, date))});
 
     event.preventDefault();
   }
@@ -54,7 +58,7 @@ class TweetList extends React.Component {
           handleSubmit={this.handleSubmit}
           value={this.state.value}
         />
-        { this.state.tweets }
+        <div className="tweets">{ this.state.tweets }</div>
       </div>
     );
   }
