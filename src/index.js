@@ -15,6 +15,7 @@ function Tweet(props) {
 
 
 function TweetList(props) {
+  console.log(typeof props.tweets);
   const tweets = props.tweets.map((tweet, index) => {
     return (
       <li key={index}>
@@ -57,7 +58,8 @@ class MicroBlogWrap extends React.Component {
       text: this.state.value,
       date: date,
     }
-    this.setState({tweets: this.state.tweets.push(tweet)});
+    const tweets = this.state.tweets.push(tweet);
+    this.setState({tweets: tweets});
 
     event.preventDefault();
   }
