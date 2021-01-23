@@ -14,7 +14,17 @@ function Tweet(props) {
 }
 
 
-class TweetList extends React.Component {
+function TweetList(props) {
+  return (
+    <div className="tweet">
+      <div className="text">{props.text}</div>
+      <div className="date">{props.date}</div>
+    </div>
+  );
+}
+
+
+class MicroBlogWrap extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -83,6 +93,6 @@ class TweetForm extends React.Component {
 
 
 ReactDOM.render(
-  <TweetList />,
+  <MicroBlogWrap />,
   document.getElementById('root')
 );
