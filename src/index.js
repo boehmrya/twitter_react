@@ -15,10 +15,19 @@ function Tweet(props) {
 
 
 function TweetList(props) {
+  const tweets = props.tweets.map((tweet, index) => {
+    return (
+      <li key={index}>
+        <Tweet
+          text={tweet.text}
+          date={tweet.date}
+        />
+      </li>
+    );
+  });
+
   return (
-    <div className="tweet-list">
-      
-    </div>
+    <div className="tweet-list">{ tweets }</div>
   );
 }
 
@@ -33,15 +42,6 @@ class MicroBlogWrap extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  renderTweet(text, date) {
-    return (
-      <Tweet
-        text={text}
-        date={date}
-      />
-    );
   }
 
   handleChange(event) {
@@ -71,7 +71,7 @@ class MicroBlogWrap extends React.Component {
           handleSubmit={this.handleSubmit}
           value={this.state.value}
         />
-        <div className="tweets">{ this.state.tweets }</div>
+        <TweetList tweets={this.state.tweets} />
       </div>
     );
   }
@@ -92,7 +92,6 @@ class TweetForm extends React.Component {
     );
   }
 }
-
 
 
 ReactDOM.render(
