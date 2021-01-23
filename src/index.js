@@ -58,7 +58,7 @@ class MicroBlogWrap extends React.Component {
       text: this.state.value,
       date: date,
     }
-    const tweets = this.state.tweets.push(tweet);
+    const tweets = this.state.tweets.concat(tweet);
     this.setState({tweets: tweets});
 
     event.preventDefault();
