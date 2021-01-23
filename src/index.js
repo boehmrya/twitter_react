@@ -16,9 +16,8 @@ function Tweet(props) {
 
 function TweetList(props) {
   return (
-    <div className="tweet">
-      <div className="text">{props.text}</div>
-      <div className="date">{props.date}</div>
+    <div className="tweet-list">
+      
     </div>
   );
 }
@@ -54,7 +53,11 @@ class MicroBlogWrap extends React.Component {
                         "July", "August", "September", "October", "November", "December"];
     const d = new Date();
     const date = monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
-    this.setState({tweets: this.state.tweets.push(this.renderTweet(this.state.value, date))});
+    const tweet = {
+      text: this.state.value,
+      date: date,
+    }
+    this.setState({tweets: this.state.tweets.push(tweet)});
 
     event.preventDefault();
   }
