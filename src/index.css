@@ -57,6 +57,23 @@ form button {
   margin-bottom: 15px;
 }
 
+.tweet {
+  margin-bottom: 10px;
+}
+
 .tweet .text {
   margin-bottom: 10px;
+}
+
+.tweet-response {
+  display: flex;
+}
+
+.tweet-response div {
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+.tweet-response div:after {
+  content: "|";
 }

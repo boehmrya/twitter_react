@@ -25,8 +25,8 @@ class TweetResponse extends React.Component {
   render() {
     return (
       <div className="tweet-response">
-        <div className="make-retweet">Retweet</div>
-        <div className="make-quote-tweet">Quote Tweet</div>
+        <div className="bar make-retweet">Retweet</div>
+        <div className="bar make-quote-tweet">Quote Tweet</div>
         <div className="make-like">Like</div>
       </div>
     );
