@@ -42,3 +42,21 @@ form button {
 .wrap {
   margin-top: 40px;
 }
+
+.tweet-list {
+  margin-top: 40px;
+}
+
+.tweet-list li {
+  list-style: none;
+}
+
+.tweet {
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 15px;
+}
+
+.tweet .text {
+  margin-bottom: 10px;
+}

@@ -4,6 +4,24 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+function hoursToStandard(hours) {
+  if (hours <= 12) {
+    return hours;
+  }
+  else {
+    return (hours - 12);
+  }
+}
+
+
+function periodOfDay(hours) {
+  if (hours < 12) {
+    return 'AM';
+  }
+  return 'PM';
+}
+
+
 function Tweet(props) {
   return (
     <div className="tweet">
@@ -68,13 +86,15 @@ class MicroBlogWrap extends React.Component {
     const monthNames = ["January", "February", "March", "April", "May", "June",
                         "July", "August", "September", "October", "November", "December"];
     const d = new Date();
-    const date = monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+    const time = hoursToStandard(d.getHours()) + ':' + d.getMinutes() + ' ' + periodOfDay(d.getHours);
+    const date = time + ' ' + monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+
     const tweet = {
       text: this.state.value,
       date: date,
     }
-    const tweets = this.state.tweets.concat(tweet);
-    this.setState({tweets: tweets});
+
+    this.setState({tweets: this.state.tweets.concat(tweet)});
 
     event.preventDefault();
   }
