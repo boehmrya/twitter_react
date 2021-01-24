@@ -22,13 +22,42 @@ function periodOfDay(hours) {
 }
 
 
-function Tweet(props) {
-  return (
-    <div className="tweet">
-      <div className="text">{props.text}</div>
-      <div className="date">{props.date}</div>
-    </div>
-  );
+class TweetStats extends React.Component {
+  render() {
+    return (
+      <div className="tweet-stats">
+        <div className="retweets">{this.props.reTweets}</div>
+        <div className="quote-tweets">{this.props.quoteTweets}</div>
+        <div className="likes">{this.props.likes}</div>
+      </div>
+    );
+  }
+}
+
+
+class Tweet extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      reTweets: 0,
+      quoteTweets: 0,
+      likes: 0,
+    };
+
+    /*
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    */
+  }
+
+  render() {
+    return (
+      <div className="tweet">
+        <div className="text">{this.props.text}</div>
+        <div className="date">{this.props.date}</div>
+      </div>
+    );
+  }
 }
 
 
