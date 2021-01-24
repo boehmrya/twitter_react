@@ -70,10 +70,12 @@ form button {
 }
 
 .tweet-response div {
-  padding-right: 10px;
   font-size: 14px;
+  color: #666;
 }
 
-.tweet-response div:after {
+.tweet-response .bar:after {
   content: "|";
+  padding-left: 5px;
+  padding-right: 5px;
 }
