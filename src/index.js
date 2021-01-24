@@ -25,9 +25,9 @@ class TweetResponse extends React.Component {
   render() {
     return (
       <div className="tweet-response">
-        <div className="make-retweet"></div>
-        <div className="make-quote-tweet"></div>
-        <div className="make-like"></div>
+        <div className="make-retweet">Retweet</div>
+        <div className="make-quote-tweet">Quote Tweet</div>
+        <div className="make-like">Like</div>
       </div>
     );
   }
@@ -78,7 +78,6 @@ class Tweet extends React.Component {
 
 
 function TweetList(props) {
-  console.log(typeof props.tweets);
   const tweets = props.tweets.map((tweet, index) => {
     return (
       <li key={index}>
