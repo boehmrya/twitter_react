@@ -21,6 +21,18 @@ function periodOfDay(hours) {
   return 'PM';
 }
 
+class TweetResponse extends React.Component {
+  render() {
+    return (
+      <div className="tweet-response">
+        <div className="make-retweet"></div>
+        <div className="make-quote-tweet"></div>
+        <div className="make-like"></div>
+      </div>
+    );
+  }
+}
+
 
 class TweetStats extends React.Component {
   render() {
@@ -52,9 +64,13 @@ class Tweet extends React.Component {
 
   render() {
     return (
-      <div className="tweet">
-        <div className="text">{this.props.text}</div>
-        <div className="date">{this.props.date}</div>
+      <div className="tweet-wrap">
+        <div className="tweet">
+          <div className="text">{this.props.text}</div>
+          <div className="date">{this.props.date}</div>
+        </div>
+        <TweetStats />
+        <TweetResponse />
       </div>
     );
   }

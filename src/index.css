@@ -51,7 +51,7 @@ form button {
   list-style: none;
 }
 
-.tweet {
+.tweet-wrap {
   background: #fff;
   padding: 25px;
   margin-bottom: 15px;
